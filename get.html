@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Huskeliste</title>
+    <style>
+
+      #app article:nth-child(even) {
+          background-color: #aec6cf;
+          height: 5vw;
+          width: 80%;
+          margin: auto;
+          margin-top: 2vw;
+      }
+      #app article:nth-child(odd) {
+           background-color: #8da4ad;
+          height: 5vw;
+          width: 80%;
+          margin: auto;
+            margin-top: 2vw;
+      }
+        #app article h1{
+            font-size: 1.5rem;
+            float: left;
+            margin: 0;
+            height: 3vw;
+        }
+        #app article h2{
+            font-size: 2.5rem;
+             height: 3vw;
+            margin: 0;
+        }
+
+        .delete{
+            float: right;
+            height: 3vw;
+            margin: 0;
+
+        }
+        .listen{
+            margin-top: 5vw;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            border: solid black 1px;
+        }
+      * {
+        padding: 10px;
+      }
+
+      .notValid {
+        border: solid red;
+      }
+      #app {
+        color: white;
+          border: solid black;
+          width: 70%;
+          margin: auto;
+          margin-top: 5vw;
+      }
+
+      h2 {
+        font-size: 2rem;
+      }
+
+        label{
+            font-size: 2rem;
+            margin-left: 5vw;
+        }
+
+      article {
+        margin: 30px;
+      }
+        .overskrift{
+            font-size: 4rem;
+            text-decoration: underline;
+        }
+      * {
+       font-family: 'Roboto Condensed', sans-serif;
+      }
+
+      .info {
+        font-size: 1rem;
+        text-align: center;
+      }
+
+      #others {
+        width: 20vw;
+        height: 2vw;
+      }
+
+      input {
+        font-size: 2rem;
+      }
+
+      .submit {
+        font-size: 1rem;
+        position: absolute;
+        left: 35%;
+        width: 30%;
+        height: 3vw;
+        color: white;
+        font-weight: 800;
+          background-color: blue;
+          margin-top: 1vw;
+      }
+
+        .hide{
+            pointer-events: none;
+        }
+
+      button:hover {
+        opacity: 0.7;
+      }
+
+      h1 {
+        font-size: 2rem;
+        text-align: center;
+        margin-top: 1vw;
+      }
+
+    </style>
+  </head>
+  <body>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
+
+    <h1 class="overskrift">Huskelisten!</h1>
+
+
+    <form id="addForm">
+      <section class="info">
+        <h2>Input til listen</h2>
+        <label for="navn">Dit navn</label>
+        <input
+          type="text"
+          name="navn"
+          size="20"
+          placeholder="Benny"
+          required
+        />
+        <label for="listen">Hvad skal på listen?</label>
+        <input
+          type="text"
+          name="listen"
+               size="30"
+          placeholder="Husk sæbe"
+          required
+        />
+      </section>
+
+      <button type="submit" class="submit hide">Tilføj til listen</button>
+    </form>
+
+    <script>
+      document.querySelector("button").addEventListener("click", besked);
+      function besked() {
+        console.log(alert);
+        alert("Input tilføjet til listen!");}
+        //document.getElementById(".delete").addEventListener("click", besked2);
+      //function besked2() {
+        //console.log(besked2);
+        //alert("Inputet er blevet fjernet fra listen!");}
+    </script>
+    <div id="app"></div>
+    <template class="main">
+      <article class="listen">
+        <h1></h1>
+        <h2></h2>
+        <button class="delete">Fjern fra listen</button>
+      </article>
+    </template>
+
+    <script src="get.js"></script>
+  </body>
+</html>
